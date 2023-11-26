@@ -214,9 +214,9 @@ do -- button scripts
 
   window["DebugTargetInfo"]:SetScript("OnClick", function()
     if this:GetChecked() then
-      DEFAULT_CHAT_FRAME:AddMessage("DUMMY: Checked")
+      SendChatMessage(".cheat debugtargetinfo on", "GUILD", nil, nil)
     else
-      DEFAULT_CHAT_FRAME:AddMessage("DUMMY: Unchecked")
+      SendChatMessage(".cheat debugtargetinfo off", "GUILD", nil, nil)
     end
   end)
 
