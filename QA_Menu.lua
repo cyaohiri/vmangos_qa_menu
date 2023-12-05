@@ -287,6 +287,28 @@ do -- button scripts
         SendChatMessage(".lookup spell " .. text, "GUILD", nil, nil)
       end
     end,
+    EditBoxOnEnterPressed = function()
+      local text = getglobal(this:GetParent():GetName().."EditBox"):GetText()
+      local dropdown_id = UIDropDownMenu_GetSelectedID(window["dropdown"])
+
+      if (dropdown_id == 1) then
+        SendChatMessage(".lookup item " .. text, "GUILD", nil, nil)
+      end
+      if (dropdown_id == 2) then
+        SendChatMessage(".lookup creature " .. text, "GUILD", nil, nil)
+      end
+      if (dropdown_id == 3) then
+        SendChatMessage(".lookup object " .. text, "GUILD", nil, nil)
+      end
+      if (dropdown_id == 4) then
+        SendChatMessage(".lookup spell " .. text, "GUILD", nil, nil)
+      end
+      
+      this:GetParent():Hide();
+    end,
+	EditBoxOnEscapePressed = function()
+		this:GetParent():Hide();
+	end,
     timeout = 0,
     whileDead = 1,
     hideOnEscape = 1,
