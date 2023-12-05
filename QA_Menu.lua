@@ -306,9 +306,9 @@ do -- button scripts
       
       this:GetParent():Hide();
     end,
-	EditBoxOnEscapePressed = function()
-		this:GetParent():Hide();
-	end,
+      EditBoxOnEscapePressed = function()
+        this:GetParent():Hide();
+      end,
     timeout = 0,
     whileDead = 1,
     hideOnEscape = 1,
